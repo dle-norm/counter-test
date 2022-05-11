@@ -1,0 +1,15 @@
+<div [style.background-color]="appService.getBackground()">
+  <button
+    (click)="goUp()">
+    up
+  </button>
+  <button
+    (click)="goDown()">
+    down
+  </button>
+  <button
+    (click)="goReset()">
+    reset
+  </button>
+  <app-show></app-show>
+</div>

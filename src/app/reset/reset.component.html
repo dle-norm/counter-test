@@ -1,0 +1,10 @@
+<div [style.background-color]="appService.getBackground()">
+  <form [formGroup]="form">
+    <input type="date" formControlName="dob" (ngModelChange)="validateBirth(form.get('dob').value)">
+  </form>
+  <button
+    (click)="goBack()">
+    back
+  </button>
+  <app-show></app-show>
+</div>

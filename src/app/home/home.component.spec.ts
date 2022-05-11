@@ -1,19 +1,30 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { AppService } from './app.service';
+import { HomeComponent } from './home.component';
+import { AppService } from '../app.service';
+import { Router } from '@angular/router';
 
-describe('AppComponent', () => {
-  let component: AppComponent;
-  let fixture: ComponentFixture<AppComponent>;
+describe('HomeComponent', () => {
+  let component: HomeComponent;
+  let fixture: ComponentFixture<HomeComponent>;
   const service = new AppService();
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent],
+      declarations: [HomeComponent],
       providers: [
         {
           provide: AppService,
           useValue: service
+        },
+        {
+          provide: Router,
+          useValue: {
+            navigate: (url) => {
+              return new Promise((resolve) => {
+                resolve(url);
+              });
+            }
+          }
         }
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -21,7 +32,7 @@ describe('AppComponent', () => {
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
