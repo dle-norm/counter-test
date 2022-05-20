@@ -28,7 +28,7 @@ export class UpComponent implements OnInit {
    */
   public up (): void {
     const counter = this.appService.getCounter();
-    this.appService.setCounter(counter + 1);
+    this.appService.setCounter(counter + this.appService.getX());
     this.appService.keepCount();
   }
 }

@@ -28,7 +28,7 @@ export class DownComponent implements OnInit {
    */
   public down (): void {
     const counter = this.appService.getCounter();
-    this.appService.setCounter(counter - 1);
+    this.appService.setCounter(counter - this.appService.getX());
     this.appService.keepCount();
   }
 }
