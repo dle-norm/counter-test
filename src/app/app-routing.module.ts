@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { DownComponent } from './down/down.component';
 import { ResetComponent } from './reset/reset.component';
 import { UpComponent } from './up/up.component';
